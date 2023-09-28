@@ -5,9 +5,9 @@ import WeatherCard from "./WeatherCard";
 import {
   WEATHER_FORECAST_API_URL,
   apiKey,
-  kelvinToF,
   daysOfWeek,
 } from "../utils/constants";
+import { kelvinToF, hpaToinHg } from "../utils/functions";
 
 const WeatherForecast = () => {
   const { latitude, longitude } = useLocationContext();

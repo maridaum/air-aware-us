@@ -1,12 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { useLocationContext } from "../App";
 import axios from "axios";
-import {
-  WEATHER_API_URL,
-  apiKey,
-  kelvinToF,
-  hpaToinHg,
-} from "../utils/constants";
+import { WEATHER_API_URL, apiKey } from "../utils/constants";
+import { kelvinToF, hpaToinHg } from "../utils/functions";
 import { BsWind } from "react-icons/bs";
 import { WiHumidity } from "react-icons/wi";
 import { PiGaugeLight } from "react-icons/pi";
