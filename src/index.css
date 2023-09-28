@@ -68,6 +68,7 @@ header {
 .location-date {
   align-self: flex-start;
   padding: 0 3rem;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .location {
@@ -91,6 +92,7 @@ header {
   gap: 1rem;
   height: 150px;
   width: 50%;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .current-weather img {
@@ -187,6 +189,7 @@ header {
   overflow-y: hidden;
   overflow-x: auto;
   scrollbar-width: thin;
+  animation: fadeIn 1s ease-in-out;
 }
 
 ::-webkit-scrollbar {
@@ -432,5 +435,14 @@ footer {
 
   footer {
     font-size: 0.8rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
