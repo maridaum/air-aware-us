@@ -37,13 +37,15 @@ const WeatherForecast = () => {
         const { dt, main, weather } = data;
         const date = new Date(dt * 1000);
         const day = daysOfWeek[date.getDay()];
-        let hours = date.getHours();
+        let hours = date.getHours() % 12 || 12;
+        let amPm = hours >= 12 ? "PM" : "AM";
         const temp = kelvinToF(main.temp);
 
         return (
           <WeatherCard
             day={day}
             time={hours}
+            amPm={amPm}
             icon={weather[0].icon}
             condition={weather[0].main}
             temp={temp}

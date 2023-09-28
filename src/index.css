@@ -58,6 +58,7 @@ header {
   padding: 1rem;
 }
 
+.loading h1,
 .error h1 {
   text-align: center;
   font-size: 1.5rem;
