@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap");
+
+:root {
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  color: black;
+}
+
+.app {
+  background: url("./assets/sky.jpg") no-repeat center center/cover;
+  height: 100vh;
+  padding: 1rem 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 2rem 0;
+}
+
+.logo h2 {
+  font-weight: var(--fw-600);
+}
+
+.weather,
+.loading,
+.error {
+  width: 100%;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.error h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: var(--fw-300);
+}
+
+.location-date {
+  align-self: flex-start;
+  padding: 0 3rem;
+}
+
+.location {
+  font-weight: var(--fw-500);
+  font-size: 2rem;
+}
+
+.current {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/* CURRENT WEATHER */
+.current-weather,
+.current-air-quality {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  height: 150px;
+  width: 50%;
+}
+
+.current-weather img {
+  width: 120px;
+}
+
+.current-weather .temp {
+  font-size: 40px;
+  font-weight: var(--fw-500);
+}
+
+.current-weather .left,
+.current-weather .right {
+  display: flex;
+}
+
+.current-weather .left {
+  align-items: center;
+}
+
+.current-weather .right {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.conditions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.conditions svg {
+  font-size: 1.2rem;
+}
+
+/* CURRENT AIR QUALITY */
+.aqi,
+.pollutants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aqi {
+  align-items: center;
+  gap: 1rem;
+}
+
+.aqi .title {
+  font-weight: var(--fw-500);
+}
+
+.aqi-num {
+  font-size: 2.5rem;
+}
+
+.aqi .quality {
+  font-weight: var(--fw-400);
+  font-size: 1.2rem;
+}
+
+.pollutants h3 {
+  font-weight: var(--fw-500);
+  margin-bottom: 0.5rem;
+}
+
+.top,
+.bottom {
+  display: flex;
+  gap: 1rem;
+}
+
+.top {
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-weight: var(--fw-500);
+}
+
+.concentration {
+  font-size: 0.9rem;
+}
+
+/* FORECAST */
+
+.weather-forecast {
+  padding: 0 1.5rem;
+  width: 95%;
+  height: 200px;
+  display: flex;
+  gap: 2rem;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.5);
+  border-radius: 16px;
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-card h4 {
+  font-weight: var(--fw-500);
+  font-size: 1.2rem;
+}
+
+.weather-card p {
+  font-size: 1rem;
+}
+
+.weather-card img {
+  width: 70px;
+}
+
+footer {
+  /* position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%); */
+  padding: 1rem 0;
+  align-self: center;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    margin-top: 3rem;
+  }
+
+  .weather {
+    padding: 2rem 1rem;
+    height: 70%;
+  }
+
+  .current {
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .location-date {
+    width: 100%;
+    padding: 0;
+  }
+
+  .location {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .date {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .current-weather,
+  .current-air-quality {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  /* CURRENT WEATHER */
+
+  .current-weather img {
+    width: 125px;
+  }
+
+  .current-weather .temp {
+    font-size: 40px;
+    font-weight: var(--fw-500);
+  }
+
+  .current-weather .condition {
+    font-size: 20px;
+  }
+
+  .current-weather .right {
+    gap: 5px;
+    padding: 1rem;
+  }
+
+  .conditions p,
+  .conditions svg {
+    font-size: 1.2rem;
+  }
+
+  /* CURRENT AIR QUALITY */
+  .aqi .title {
+    font-size: 1.8rem;
+  }
+
+  .aqi-num {
+    font-size: 3rem;
+  }
+
+  .aqi .quality {
+    font-size: 1.6rem;
+  }
+
+  /* WEATHER FORECAST */
+
+  .weather-forecast {
+    height: 200px;
+    margin-top: 1rem;
+    padding: 0 3rem;
+  }
+
+  .weather-card h4 {
+    font-weight: var(--fw-500);
+    font-size: 1.2rem;
+  }
+
+  .weather-card p {
+    font-size: 1rem;
+  }
+
+  .weather-card img {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    padding: 1rem;
+  }
+
+  header {
+    margin-top: 0;
+  }
+
+  .logo h2 {
+    font-size: 1.3rem;
+  }
+
+  .weather {
+    height: 80%;
+    padding: 0;
+  }
+
+  .current {
+    padding: 0;
+    width: 100%;
+  }
+
+  .location {
+    font-size: 1.3rem;
+  }
+
+  .date {
+    font-size: 1rem;
+  }
+
+  /* CURRENT WEATHER */
+
+  .current-weather {
+    padding: 0 1.1rem 0 0.6rem;
+  }
+
+  .current-weather img {
+    width: 80px;
+  }
+
+  .current-weather .temp {
+    font-size: 25px;
+    font-weight: var(--fw-500);
+  }
+
+  .current-weather .right {
+    gap: 5px;
+  }
+
+  .conditions p {
+    font-size: 0.8rem;
+  }
+
+  .conditions svg {
+    font-size: 1rem;
+  }
+
+  /* AIR QUALITY */
+
+  .aqi .title {
+    font-size: 1.2rem;
+  }
+
+  .aqi-num {
+    font-size: 2rem;
+  }
+
+  .aqi .quality {
+    font-size: 1rem;
+  }
+
+  .pollutants h3 {
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 0.8rem;
+  }
+
+  .concentration {
+    font-size: 0.7rem;
+  }
+
+  /* WEATHER FORECAST */
+
+  .weather-forecast {
+    height: 150px;
+  }
+
+  .weather-card h4 {
+    font-size: 0.8rem;
+  }
+
+  .weather-card p {
+    font-size: 0.8rem;
+  }
+
+  .weather-card img {
+    width: 50px;
+  }
+
+  /* FOOTER */
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
