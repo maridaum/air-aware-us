@@ -23,6 +23,8 @@ const WeatherForecast = () => {
     });
   };
 
+  console.log(forecastData);
+
   useEffect(() => {
     if (latitude && longitude) {
       axios
@@ -36,9 +38,12 @@ const WeatherForecast = () => {
       {forecastData.map((data, index) => {
         const { dt, main, weather } = data;
         const date = new Date(dt * 1000);
+        console.log(date);
         const day = daysOfWeek[date.getDay()];
-        let hours = date.getHours() % 12 || 12;
+        let hours = date.getHours();
+        console.log(hours);
         let amPm = hours >= 12 ? "PM" : "AM";
+        hours = hours % 12 || 12;
         const temp = kelvinToF(main.temp);
 
         return (
